@@ -1,0 +1,92 @@
+@charset "ISO-8859-1";
+body{
+	width: 70%;
+	margin: 5% auto;
+	font-family: 'Lato', sans-serif;
+	background-color: white;
+}
+body h1.title{
+	text-align:center;
+	margin-bottom: 6%;
+}
+input[type=url]{
+	width:50%;
+	padding: 12px 20px;
+	margin: 0 auto;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 20px;
+}
+input[type=submit].Crawl{
+	width:50%;
+	background-color: #53D8FB;
+	color: #303036;
+	padding: 14px 20px;
+	margin: 0 auto;
+	border:none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 20px;
+}
+.description{
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+    box-shadow: 0 0 10px grey;
+    border-radius: 4px;
+    padding: 12px;
+}
+.list{
+	list-style-position: inside;
+	margin-top: 4%;
+	padding: 0;
+}
+.list>li{
+	box-shadow: 4px 1px 20px #66C3FF;
+    border-radius: 20px;
+    font-size: 26px;
+    padding: 5%;
+    margin: 4%;
+    overflow: hidden;
+}
+.urlName{
+	font-family: 'Lato', sans-serif;
+	font-size: 25px;
+    font-weight: bold;
+    display: inline-flex;
+    padding: 0 0 4% 0;
+    margin: 0;
+    max-width: 90%;
+}
+.search{
+	font-family: 'Lato', sans-serif;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;	
+}
+.showURL{
+	width:30%;
+	font-family: 'Lato', sans-serif;
+	background-color: #BED8D4;
+	color: darkblue;
+	padding: 14px 20px;
+	margin:0 auto;
+	border:none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 20px;
+	text-align:center;
+	justify-content:center;
+	display:flex;
+}
+.content{
+	box-shadow: 4px 2px 10px grey;
+	display:inline-block; 
+	position: relative; 
+	max-height:500px; 
+	overflow:scroll;
+	margin: 10% auto;
+	width: 100%;
+	
+}
