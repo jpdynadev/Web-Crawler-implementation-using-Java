@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URI;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Hashtable;
@@ -14,6 +15,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import com.google.common.net.InternetDomainName;
 
 public class WebCrawler {
 
@@ -79,36 +82,17 @@ public class WebCrawler {
 	}
 	
 	public String findDomain(String URL) {
-		String domain = "";
-		boolean firstSlash = false;
-		boolean secondSlash = false;
-		for(int i = 0; i < URL.length(); i++) {
-			Character current = URL.charAt(i);
-			if(current == '/' && !firstSlash) {
-				firstSlash = !firstSlash;
-			}else
-			if(current == '/' && firstSlash && !secondSlash) {
-				secondSlash = !secondSlash;
-			}else
-			if(secondSlash && current != '.') {
-				domain = domain + current;
-			}else
-			if(current == '.' && (URL.length() -1)- i > 3) {
-				domain = "";
-			}else
-			if(current == '.') {
-				return domain;
-			}
+		try {
+			String domain = InternetDomainName.from(new URI(URL).getHost()).topPrivateDomain().toString();
+			return domain.substring(0, domain.indexOf('.'));
+		}catch(Exception e) {
+			System.out.println("Domain could not be found");
+			return "";
 		}
-		return "";
 	}
 	
-	public static void logger(String link, Document doc) throws IOException {
-		File f = new File("/Links.txt");
-		if(!f.exists()) {
-			f.createNewFile();
-		}
-		try(PrintWriter pw = new PrintWriter(new FileOutputStream(f, true))){
+	public static void logger(String link, Document doc) {
+		try(PrintWriter pw = new PrintWriter(new FileOutputStream("/LogFile.txt", true))){
 			pw.append(new Timestamp(System.currentTimeMillis()) + ": " + new LinkResponse(link,doc) + '\n');
 		}catch(Exception e) {
 			System.out.println(e.getLocalizedMessage());
@@ -116,8 +100,8 @@ public class WebCrawler {
 			e.printStackTrace();
 		}
 	}
-//	public static void main(String[] args) {
-//		WebCrawler ws = new WebCrawler("http://www.yahoo.com");
-//		ws.findURLS();
-//	}
+	public static void main(String[] args) {
+		WebCrawler ws = new WebCrawler("http://www.yahoo.com");
+		System.out.println(ws.findDomain("https://www.mem.yahoo.com:8080/somethingelse"));
+	}
 }

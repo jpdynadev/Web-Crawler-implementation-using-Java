@@ -39,7 +39,7 @@ public class WebCrawlerServlet extends HttpServlet {
 			}
 			
 		}catch(Exception e) {
-			
+			System.out.println("Failed due to: " + e.getLocalizedMessage());
 		}
 		
 		request.setAttribute("OrgiURL", URL);
