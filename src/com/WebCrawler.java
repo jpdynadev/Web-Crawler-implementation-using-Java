@@ -92,7 +92,7 @@ public class WebCrawler {
 	}
 	
 	public static void logger(String link, Document doc) {
-		try(PrintWriter pw = new PrintWriter(new FileOutputStream("/LogFile.txt", true))){
+		try(PrintWriter pw = new PrintWriter(new FileOutputStream("/Links.txt", true))){
 			pw.append(new Timestamp(System.currentTimeMillis()) + ": " + new LinkResponse(link,doc) + '\n');
 		}catch(Exception e) {
 			System.out.println(e.getLocalizedMessage());
