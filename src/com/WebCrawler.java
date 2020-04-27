@@ -43,7 +43,7 @@ public class WebCrawler {
 				 * Checking if url contains the domain, as well as making sure it is not the same as the original url
 				 * also verifying that it is not an anchor, and instead a link to another page by checking if it contains #
 				 */
-				if(checking.contains(this.domain) && !checking.equals(URL) && !checking.contains("#")) {
+				if(findDomain(checking).equals(domain) && !checking.equals(URL) && !checking.contains("#")) {
 					
 					if(urls.get(checking) == null) {
 						Document temp = null;
@@ -100,8 +100,8 @@ public class WebCrawler {
 			e.printStackTrace();
 		}
 	}
-	public static void main(String[] args) {
-		WebCrawler ws = new WebCrawler("http://www.yahoo.com");
-		System.out.println(ws.findDomain("https://www.mem.yahoo.com:8080/somethingelse"));
-	}
+//	public static void main(String[] args) {
+//		WebCrawler ws = new WebCrawler("http://www.yahoo.com");
+//		System.out.println(ws.findDomain("https://www.mem.yahoo.com:8080/somethingelse"));
+//	}
 }
