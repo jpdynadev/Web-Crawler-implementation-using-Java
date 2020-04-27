@@ -253,7 +253,7 @@ Landing Page:
 
 Pulling Search Results:
 
-![image](https://user-images.githubusercontent.com/59784335/80375594-91a87700-8866-11ea-857c-fc849137b4da.png)
+![image](https://user-images.githubusercontent.com/59784335/80376189-74c07380-8867-11ea-84bf-7fb0e77951e5.png)
 
 
 Showing individual URL content:
