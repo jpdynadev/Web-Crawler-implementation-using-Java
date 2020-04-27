@@ -244,3 +244,18 @@ public String getSingleURL() {
 	}
 ```
 
+###Design
+
+Landing Page:
+
+![image](https://user-images.githubusercontent.com/59784335/80375509-6f165e00-8866-11ea-86bc-6711410f94d2.png)
+
+
+Pulling Search Results:
+
+![image](https://user-images.githubusercontent.com/59784335/80375594-91a87700-8866-11ea-857c-fc849137b4da.png)
+
+
+Showing individual URL content:
+
+![image](https://user-images.githubusercontent.com/59784335/80375739-c4526f80-8866-11ea-90d4-adceb731fefb.png)
