@@ -1,11 +1,11 @@
-###How to run
+# Web-Crawler-implementation-using-Java
+Web Crawler implementation using Java
+
+### How to run
 1. Install eclipse or intellij ide
 2. Import src code 
 3. Install Apache tomcat 9.0 and run on server
 
-
-# Web-Crawler-implementation-using-Java
-Web Crawler implementation using Java
 
 This is a web crawler implementation maven project using JSP for front end. 
 
